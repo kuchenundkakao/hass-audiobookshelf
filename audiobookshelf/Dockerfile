@@ -2,18 +2,17 @@ ARG BUILD_FROM
 ## STAGE 0: Build Client ###
 
 FROM node:20-alpine AS build
-ADD https://github.com/advplyr/audiobookshelf/archive/refs/tags/v2.9.0.tar.gz /
+ADD https://github.com/advplyr/audiobookshelf/archive/refs/tags/v2.24.0.tar.gz /
 RUN cd / && \
-    tar xvf v2.9.0.tar.gz && \
-    cd /audiobookshelf-2.9.0/client/ && \
+    tar xvf v2.24.0.tar.gz && \
+    cd /audiobookshelf-2.24.0/client/ && \
     npm ci && npm cache clean --force \
-    npm install -g npm@10.2.4 && \
     npm run generate && \
     ls -l /audiobookshelf-2.9.0/client
 
 ## STAGE 1: Build Server ###
 
-FROM sandreas/tone:v0.1.5 AS tone
+FROM sandreas/tone:v0.2.5 AS tone
 
 # https://developers.home-assistant.io/docs/add-ons/configuration#add-on-dockerfile
 FROM $BUILD_FROM
@@ -40,10 +39,10 @@ ENV NODE_ENV=production
 COPY rootfs /
 
 COPY --from=tone /usr/local/bin/tone /usr/local/bin/
-COPY --from=build /audiobookshelf-2.9.0/client/dist /client/dist
-COPY --from=build /audiobookshelf-2.9.0/server /server
-COPY --from=build /audiobookshelf-2.9.0/package* /
-COPY --from=build /audiobookshelf-2.9.0/index.js /
+COPY --from=build /audiobookshelf-2.24.0/client/dist /client/dist
+COPY --from=build /audiobookshelf-2.24.0/server /server
+COPY --from=build /audiobookshelf-2.24.0/package* /
+COPY --from=build /audiobookshelf-2.24.0/index.js /
 
 RUN npm ci --only=production
 
