@@ -7,7 +7,9 @@
 [ -d $METADATA_PATH ] || mkdir -p $METADATA_PATH
 [ -d $CONFIG_PATH ] || mkdir -p $CONFIG_PATH
 # Home Assistant setzt INGRESS_ENTRYPOINT. Audiobookshelf verwendet ROUTER_BASE_PATH.
-if [ -n "$INGRESS_ENTRYPOINT" ]; then
-  export ROUTER_BASE_PATH="$INGRESS_ENTRYPOINT"
+if [ -n "${INGRESS_ENTRYPOINT}" ]; then
+  export ROUTER_BASE_PATH="${INGRESS_ENTRYPOINT}"
+else
+  export ROUTER_BASE_PATH="/" # Für direkten Zugriff (z.B. http://host:port/)
 fi
 exec node /index.js
