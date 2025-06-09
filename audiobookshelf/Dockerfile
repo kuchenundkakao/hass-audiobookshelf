@@ -39,6 +39,7 @@ RUN apk update && \
     make \
     python3 \
     g++ \
+    tini \
     npm
 
 ENV NODE_ENV=production
