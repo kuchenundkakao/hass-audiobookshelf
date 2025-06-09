@@ -44,9 +44,9 @@ RUN apk update && \
 ENV NODE_ENV=production
 
 RUN case "$BUILD_ARCH" in \
-  "linux/amd64") \
+  "amd64") \
   curl -L -o /tmp/library.zip "https://github.com/mikiher/nunicode-binaries/releases/download/v1.2/libnusqlite3-linux-musl-x64.zip" ;; \
-  "linux/aarch64") \
+  "aarch64") \
   curl -L -o /tmp/library.zip "https://github.com/mikiher/nunicode-sqlite/releases/download/v1.2/libnusqlite3-linux-musl-arm64.zip" ;; \
   *) echo "Unsupported Home Assistant architecture for libnusqlite3: $BUILD_ARCH" && exit 1 ;; \
   esac && \
