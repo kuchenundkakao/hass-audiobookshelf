@@ -8,7 +8,7 @@ RUN cd / && \
     cd /audiobookshelf-2.24.0/client/ && \
     npm ci && npm cache clean --force \
     npm run generate && \
-    ls -l /audiobookshelf-2.9.0/client
+    ls -l /audiobookshelf-2.24.0/client
 
 ## STAGE 1: Build Server ###
 
