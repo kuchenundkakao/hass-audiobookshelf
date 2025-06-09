@@ -67,4 +67,10 @@ RUN apk del make python3 g++
 
 EXPOSE 8081
 
+ENV SOURCE="docker"
+ENV NUSQLITE3_DIR=${NUSQLITE3_DIR}
+ENV NUSQLITE3_PATH=${NUSQLITE3_PATH}
+
+ENTRYPOINT ["tini", "--"]
+
 #CMD ["node", "index.js"]
