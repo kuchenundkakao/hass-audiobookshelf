@@ -13,10 +13,7 @@ arch:
 init: false
 map:
   - media:ro
-  - ssl:ro
   - config:rw
-ports:
-  443/tcp: 13378
 environment:
   METADATA_PATH: /data/abs-metadata
   CONFIG_PATH: /data/abs-config
