@@ -1,7 +1,7 @@
 ARG BUILD_FROM
 ## STAGE 0: Build Client ###
 
-FROM node:16-alpine AS build
+FROM node:20-alpine AS build
 ADD https://github.com/advplyr/audiobookshelf/archive/refs/tags/v2.9.0.tar.gz /
 RUN cd / && \
     tar xvf v2.9.0.tar.gz && \
