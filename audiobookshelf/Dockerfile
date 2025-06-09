@@ -7,6 +7,7 @@ RUN cd / && \
     tar xvf v2.24.0.tar.gz && \
     cd /audiobookshelf-2.24.0/client/ && \
     npm ci && npm cache clean --force \
+    npm install -g npm@10.2.4 && \
     npm run generate && \
     ls -l /audiobookshelf-2.24.0/client
 
