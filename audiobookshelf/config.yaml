@@ -1,6 +1,6 @@
 # https://developers.home-assistant.io/docs/add-ons/configuration#add-on-config
 name: Audiobookshelf
-version: "2.24.0-11"
+version: "2.24.0-12"
 slug: audiobookshelf
 description: Running an audiobookshelf server
 url: "https://github.com/matthewturk/hass-audiobookshelf/tree/main/audiobookshelf"
@@ -14,8 +14,8 @@ init: false
 map:
   - media:ro
   - config:rw
-ports:
-  8081/tcp: 13378
+#ports:
+#  8081/tcp: 13378
 environment:
   METADATA_PATH: /data/abs-metadata
   CONFIG_PATH: /data/abs-config
