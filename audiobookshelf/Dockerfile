@@ -65,7 +65,6 @@ RUN npm ci --only=production
 
 RUN apk del make python3 g++
 
-
 EXPOSE 8081
 
 ENV SOURCE="docker"
