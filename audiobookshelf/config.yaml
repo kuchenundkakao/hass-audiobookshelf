@@ -3,7 +3,7 @@ name: Audiobookshelf
 version: "2.24.0-17"
 slug: audiobookshelf
 description: Running an audiobookshelf server
-url: "https://github.com/matthewturk/hass-audiobookshelf/tree/main/audiobookshelf"
+url: "https://github.com/kuchenundkakao/hass-audiobookshelf/tree/main/audiobookshelf"
 arch:
   - armhf
   - armv7
