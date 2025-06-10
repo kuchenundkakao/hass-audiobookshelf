@@ -17,8 +17,8 @@ map:
 ports:
   8081/tcp: 13378
 environment:
-  METADATA_PATH: /config/abs-metadata
-  CONFIG_PATH: /config/abs-config
+  METADATA_PATH: /data/abs-metadata
+  CONFIG_PATH: /data/abs-config
   PORT: "8081"
   ALLOW_IFRAME: 1
 startup: system
