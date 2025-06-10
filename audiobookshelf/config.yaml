@@ -14,8 +14,8 @@ init: false
 map:
   - media:ro
   - config:rw
-ingress: true
-ingress_port: 8081
+ports:
+  8081/tcp: 13378
 environment:
   METADATA_PATH: /config/abs-metadata
   CONFIG_PATH: /config/abs-config
