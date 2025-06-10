@@ -19,6 +19,6 @@ ports:
 environment:
   METADATA_PATH: /config/abs-metadata
   CONFIG_PATH: /config/abs-config
-  ALLOW_IFRAME: 1
+  ALLOW_IFRAME: "1"
   PORT: "8081"
 startup: system
