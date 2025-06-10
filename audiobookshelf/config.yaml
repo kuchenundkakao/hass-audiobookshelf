@@ -14,8 +14,6 @@ init: false
 map:
   - media:ro
   - config:rw
-#ports:
-#  8081/tcp: 13378
 ingress: true
 ingress_port: 8081
 environment:
